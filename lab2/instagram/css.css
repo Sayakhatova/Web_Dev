@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica','Arial', 'sans-serif';
+    background-color: white; 
+}
+
+.main{
+    width: 100%;
+    height: 893px;
+    background-color: rgb(250, 250, 250);
+}
+
+.items{
+    width: 935px;
+    height: 829px;
+    padding: 32px 0px;
+}
+
+#ph{
+    width: 430px;
+    height: 618px;
+    margin-left: 260px;
+    margin-top: -8px;
+}
+
+.form{
+    width: 350px;
+    height: 385px;
+    background-color: white;
+    border: 1px solid rgb(219, 219, 219);
+    align-items: center;
+    float: right;
+}
+
+#logo-img{
+    width: 180px;
+    height: 51px;
+    margin: 30px 86.5px 30px;
+}
+
+input{
+    display: inline-block;
+    width: 270px;
+    height: 38px;
+    padding: 9px 0px 7px 8px;
+    background-color: #fafafa;
+    text-align: start;
+    color: rgb(38, 38, 38);
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 3px;
+}
+
+.inp{
+    padding: 4px 0px;
+    width: 350px;
+    text-align: center;
+    align-items: center;
+}
+
+#login-b{
+    width: 348px;
+    height: 46px;
+    margin: 8px 40px 0px;
+}
+
+#login{
+    width: 270px;
+    height: 32px;
+    padding: 5px 9px;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: rgba(0, 149, 246, 0.3);
+    color: white;
+}
+
+.line{
+    width: 110px;
+    display: inline-block;
+    padding-bottom: 1px;
+    background-color: rgb(219, 219, 219);
+}
+
+#or1{
+    display: inline-block;
+    width: 18px;
+    margin: 0px 10px;
+    color: rgb(142, 142, 142);
+    font-weight: 600;
+}
+
+#or{
+    width: 270px;
+    height: 15px;
+    margin: 0px 40px;
+    font-size: 13px;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#fblogo{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+#fb{
+    font-size: 14px;
+    font-weight: 600;
+    width: 270px;
+    color: rgb(56, 81, 133);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 90px 0px;
+    padding: 7px 0px 0px;
+}
+
+#fp{
+    margin-top: -12px;
+    height: 16px;
+    color: rgb(0, 55, 107);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    text-align: center;
+}
+
+#forgetp{
+    width: 350px;
+    text-align: center;
+    padding: 10px 90px;
+}
+
+.signup{
+    width: 350px;
+    height: 62px;
+    padding: 20px 0px;
+    border: 1px solid rgb(219, 219, 219);
+    background-color: white;
+    margin-top: 393px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.su{
+    text-decoration: none;
+    color: rgb(0, 149, 246);
+    font-weight: 500;
+}
+
+#getapp{
+    width: 310px;
+    height: 18px;
+    margin: 10px 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(38, 38, 38);
+    text-align: center;
+    padding: 8px 0px;
+}
+
+#app{
+    width: 136px;
+    height: 40px;
+}
+
+#plm{
+    width: 134px;
+    height: 40px;
+}
+
+.download{
+    width: 350px;
+    height: 44px;
+    margin: 10px 0px;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.right{
+    margin-top: 12px;
+    width: 350px;
+    height: 817px;
+    float: right;
+    margin-top: 30px;
+    margin-right: -120px;
+}
+
+.info1{
+    width: 100%;
+    height: 23px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.info2{
+    width: 100%;
+    height: 23px;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.info a{
+    color: rgb(142, 142, 142);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 400;
+    margin: -2px 0px -3px 0px;
+    text-decoration: none;
+}
+
+#meta{
+    height: 20px;
+    color: rgb(142, 142, 142);
+    font-size: 12px;
+    font-weight: 400;
+    padding: 23px 0px;
+    margin-left: 660px;
+}
+
+#language{
+    width: 70px;
+    height: 20px;
+    border: 1px solid white;
+    text-align: start;
+    background-color: white;
+    cursor: pointer;
+    font-size: 12px;
+    color: rgb(142, 142, 142);
+}
+
+.select{
+    float: left;
+    padding: 22px 0px;
+    margin-left: 580px;
+}

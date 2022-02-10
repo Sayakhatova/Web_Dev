@@ -1,0 +1,221 @@
+*{
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+body{
+    font-family: 'Freight  Sans Bold', 'Helvetica', 'Arial', 'sans-serif';
+    background-color: white;
+}
+
+.main{
+    background-color: rgb(240, 242, 245);
+    width: 100%px;
+    height: 536px;
+    padding: 72px 0px 112px;
+}
+
+.items{
+    width: 980px;
+    height: 496px;
+    margin: 0px 148px;
+    padding: 20px 0px;
+}
+
+.left{
+    float: left;
+    width: 548px;
+    height: 266px;
+    padding: 0px 32px 0px;
+    margin-top: 112px;
+}
+
+.right{
+    width: 396px;
+    height: 456px;
+    float: right;
+    margin-top: -378px;
+    margin-right: -24px;
+}
+
+#conn{
+    font-size: 28px;
+    font-weight: 400;
+    width: 500px;
+    padding: 0px 0px 20px;
+    margin-top: 20px;
+    color: #1C1E21;
+}
+
+#img{
+    margin: -28px;
+    width: 301px;
+    height: 106px;
+}
+
+.form{
+    display: block;
+    width: 396px;
+    height: 315px;
+    padding: 10px 0px 24px;
+    margin: 40px 0px 0px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: -1px 2px 5px -1px rgb(138, 141, 145);
+    align-items: center;
+}
+
+input{
+    display: inline-block;
+    width: 360px;
+    height: 52px;
+    font-size: 17px;
+    font-weight: 400;
+    border: 1px solid rgb(221, 223, 226);
+    padding: 14px 16px;
+    border-radius: 6px;
+    text-align: start;
+    color: black;
+    cursor: text;
+}
+
+.inp{
+    padding: 6px 0px;
+    width: 396px;
+    text-align: center;
+}
+
+.log{
+    padding-top: 8px;
+    width: 396px;
+    text-align: center;
+}
+
+#login{
+    display: inline-block;
+    width: 362px;
+    height: 48px;
+    background-color: #1877F2;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0px 16px;
+    border-radius: 6px;
+    border-width: 0px ;
+    border-bottom-color: white;
+    cursor: pointer;
+    position: relative;
+}
+
+#forgPass{
+    display: block;
+    width: 396px;
+    height: 19px;
+    color: #1877F2;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 16px 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#line1{
+    width: 364px;
+    border-bottom: 1px solid #dadde1;
+    text-align: center;
+    margin: 20px 16px;
+    align-items: center;
+}
+
+#new-acc{
+    display: inline block;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    width: 195px;
+    height: 48px;
+    background-color: #42B72A;
+    text-align: center;
+    border-radius: 6px;
+    border-width: 0px;
+    cursor: pointer;
+    padding: 0px 16px;
+}
+
+.new{
+    width: 396px;
+    height: 48px;
+    padding-top: 6px;
+    text-align: center;
+}
+
+.sublink{
+    display: block;
+    width: 396px;
+    color: black;
+    margin: 28px 0px 0px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.sublink a{
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lang{
+    width: 980px;
+    height: 20px;
+    padding: 8px 0px 0px;
+    font-size: 12px;
+    color: rgb(138, 141, 145);
+    margin-top: 15px;
+    margin-left: -50px;
+}
+
+.lang a{
+    text-decoration: none;
+    color: rgb(138, 141, 145);
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.b-info a{
+    text-decoration: none;
+    color: rgb(138, 141, 145);
+    font-size: 12px;
+    padding-right: 20px;
+}
+
+.b-info{
+    width: 980px;
+    height: 58px;
+    font-size: 12px;
+    color: rgb(138, 141, 145);
+    margin-left: -50px;
+}
+
+.bottom{
+    width: 980px;
+    height: 138px;
+    margin: 0px 230px;
+}
+
+#line2{
+    width: 980px;
+    height: 8px;
+    border-bottom: 1px solid rgb(221, 223, 226);
+    margin-bottom: 8px;
+    margin-left: -50px;
+}
+
+#meta{
+    margin-top: 10px;
+    color: rgb(115, 115, 115);
+}
