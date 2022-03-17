@@ -1,0 +1,44 @@
+.page-title {
+	text-align: center;
+}
+
+fieldset {
+	border-style: none;
+	background-color: rgb(174, 172, 201);
+	padding: 5px;
+}
+
+input {
+	width: 91%;
+	padding: 5px;
+	margin-right: 10px;
+	height: 25px;
+	border-style: none;
+}
+
+.add-button {
+	width: 100px;
+	height: 35px;
+	background-color: #61b15a;
+	font-size: 16px;
+	color: white;
+	border: none;
+}
+
+.albums-list {
+	padding: 15px;
+	background-color: rgba(174, 172, 201, 0.383);
+}
+
+.album-entry {
+	width: 100%;
+	display: inline-grid;
+ 	grid-template-columns: 50px auto 30px;
+	border-bottom: 1px solid #333;
+	margin-bottom: 15px;
+	margin-right: 30px;
+}
+
+.detail-link {
+	text-decoration: none;
+}
