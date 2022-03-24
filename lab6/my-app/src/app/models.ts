@@ -1,12 +1,12 @@
 export interface Album {
     id: number;
     title: string;
-    body: string;
 }
-
-export interface AlbumPhotos {
+export interface Product {
     id: number;
     title: string;
-    url: string;
-    thumbnailUrl: string;
+    price: string;
+    category: string;
+    description: string;
+    image: string;
 }

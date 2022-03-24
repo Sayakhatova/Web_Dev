@@ -1,18 +1,9 @@
-<body> 
-  <nav>
-    <ul class="navigation-bar">
-      <li class="navigation-option">
-        <a routerLink="/home" class="navigation-option">Home</a>
-      </li>
-      <li class="navigation-option">
-        <a routerLink="/about" class="navigation-option">About</a>
-      </li>
-      <li class="navigation-option">
-        <a routerLink="/albums" class="navigation-option">Albums</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-</body>
+<nav class="header-links">
+  <ul class="header-links__list">
+      <li  ><a id="home" (click)="choosePage(1)" class="header-links__link" routerLink="/home">Home</a></li>
+      <li ><a (click)="choosePage(2)" id="about"  class="header-links__link" routerLink="/about">About</a></li>
+      <li ><a (click)="choosePage(3)" id="albums"  class="header-links__link" routerLink="/albums">Albums</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,30 @@
+<div class="container" *ngIf="loaded">
+    <div class="category">
+        <h1 > {{category}} </h1>
+    </div>
+    <button (click)="back()" class="btn-category">
+        &#8592;
+    </button>
+    <button class="btn-create" (click)="creating=!creating">Add item</button>
+    <fieldset class="field-create" *ngIf="creating">
+        <input placeholder="Title" type="text" [(ngModel)]="newTitle">
+        <input placeholder="price" type="text" [(ngModel)]="newPrice">
+        <button (click)="addItem()">Add</button>
+    </fieldset>
+    <div class="category-container">
+        <div *ngFor="let item of album" class="category-container__item">
+            <a routerLink="/album/{{item.id}}"  >
+                <img class="category-container__img" src={{item.image}} alt="item img">
+                <p>{{item.title}}</p>
+                <p>{{item.price}}</p>
+            </a>
+            <button (click)="deleteItem(item.id)" class="btn-delete">x</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<img class="loader" *ngIf="!loaded" src="../../assets/img/giphy.gif" >

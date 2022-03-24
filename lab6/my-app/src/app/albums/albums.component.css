@@ -1,44 +1,19 @@
-.page-title {
-	text-align: center;
+.categ-container{
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-fieldset {
-	border-style: none;
-	background-color: rgb(174, 172, 201);
-	padding: 5px;
+.categ-container__item{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(183, 31, 230);
+    color: #ffffff;
+    text-decoration: none;
 }
-
-input {
-	width: 91%;
-	padding: 5px;
-	margin-right: 10px;
-	height: 25px;
-	border-style: none;
-}
-
-.add-button {
-	width: 100px;
-	height: 35px;
-	background-color: #61b15a;
-	font-size: 16px;
-	color: white;
-	border: none;
-}
-
-.albums-list {
-	padding: 15px;
-	background-color: rgba(174, 172, 201, 0.383);
-}
-
-.album-entry {
-	width: 100%;
-	display: inline-grid;
- 	grid-template-columns: 50px auto 30px;
-	border-bottom: 1px solid #333;
-	margin-bottom: 15px;
-	margin-right: 30px;
-}
-
-.detail-link {
-	text-decoration: none;
+.loader{
+    position: fixed;
+    left: 40%;
+    top: 20%;
 }

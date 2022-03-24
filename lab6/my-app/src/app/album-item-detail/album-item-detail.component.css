@@ -1,0 +1,38 @@
+.container{
+    display: flex;
+}
+.btn-category{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 170px;
+    font-size: 30px;
+    background-color: rgb(183, 31, 230);
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btn-category:hover{
+    background-color: rgb(162, 89, 184);
+}
+.loader{
+    position: fixed;
+    left: 40%;
+    top: 20%;
+}
+.btn-edit{
+    border: none;
+    background-color: rgb(183, 31, 230);
+    color: #ffffff;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+}
+.editing-container{
+    display: grid;
+    width: 550px;
+    gap: 10px;
+    border: 1px solid rgb(183, 31, 230);
+    padding: 20px;
+    margin-left: 30%;
+}

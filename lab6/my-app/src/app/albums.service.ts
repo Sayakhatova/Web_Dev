@@ -1,45 +1,31 @@
 import { Injectable } from '@angular/core';
-import { ALBUMS } from './fake-db';
-import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Album, AlbumPhotos } from './models';
-
+import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
+import { Album, Product } from './models';
 
 @Injectable({
     providedIn: 'root'
 })
-
 export class AlbumsService {
-    getAlbumPhotosComponents(id: number) {
-        throw new Error('Method not implemented.');
-    }
 
-    BASE_URL = 'https://jsonplaceholder.typicode.com';
-
-    constructor(private client: HttpClient) {
-    }
-
+    constructor(private client: HttpClient) { }
     getAlbums(): Observable<Album[]> {
-        return this.client.get<Album[]>(`${this.BASE_URL}/albums`);
+        let val = this.client.get<Album[]>("https://fakestoreapi.com/products/categories");
+        return val;
     }
-
-    getAlbum(id: number): Observable<Album> {
-        return this.client.get<Album>(`${this.BASE_URL}/albums/${id}`);
+    getAlbum(categ: string): Observable<Product[]> {
+        return this.client.get<Product[]>(`https://fakestoreapi.com/products/category/${categ}`);
     }
-
-    addAlbum(album: Album): Observable<Album> {
-        return this.client.post<Album>(`${this.BASE_URL}/albums`, album);
+    getAlbumItem(id: any): Observable<Product> {
+        return this.client.get<Product>(`https://fakestoreapi.com/products/${id}`);
     }
-
-    updateAlbum(album: Album): Observable<Album> {
-        return this.client.put<Album>(`${this.BASE_URL}/albums/${album.id}`, album);
+    deleteItem(id: any): Observable<any> {
+        return this.client.delete(`https://fakestoreapi.com/products/${id}`);
     }
-
-    deleteAlbum(id: number): Observable<any> {
-        return this.client.delete(`${this.BASE_URL}/albums/${id}`);
+    updateItem(item: Product): Observable<Product> {
+        return this.client.put<Product>(`https://fakestoreapi.com/products/${item.id}`, item);
     }
-
-    getAlbumPhotos(id: number): Observable<AlbumPhotos[]> {
-        return this.client.get<AlbumPhotos[]>(`${this.BASE_URL}/albums/${id}/photos`);
+    createItem(item: Product): Observable<Product> {
+        return this.client.post<Product>(`https://fakestoreapi.com/products`, item);
     }
 }

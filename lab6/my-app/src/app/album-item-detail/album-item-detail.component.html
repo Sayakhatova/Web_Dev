@@ -1,0 +1,21 @@
+<button (click)="back()" class="btn-category">
+    &#8592;
+</button>
+<div *ngIf="loaded" class="container">
+    <img src={{item.image}} alt="item image">
+    <div>
+        <h1>{{item.title}}</h1>
+        <h3>{{item.description}}</h3>
+        <h3>{{item.price}} $</h3>
+        <button class="btn-edit" (click)="editItem(item.id)">Edit item</button>
+    </div>
+</div>
+
+<div *ngIf="editing" class="editing-container">
+    <input [(ngModel)]="item.title" id="title" type="text" placeholder="title">
+    <input [(ngModel)]="item.price" id="price" type="text" placeholder="price">
+    <input [(ngModel)]="item.description" id="description" type="text" placeholder="description">
+    <button (click)="updateItem()">Edit</button>    
+</div>
+
+<img class="loader" *ngIf="!loaded" src="../../assets/img/giphy.gif" >
