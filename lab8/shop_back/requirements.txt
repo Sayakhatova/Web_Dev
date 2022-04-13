@@ -1,0 +1,15 @@
+asgiref==3.5.0
+distlib==0.3.4
+Django==4.0.4
+django-crispy-forms==1.14.0
+filelock==3.6.0
+package-name==0.1
+platformdirs==2.5.1
+psycopg2==2.8.6
+psycopg2-binary==2.8.6
+pygame==2.0.1
+pytz==2022.1
+six==1.16.0
+sqlparse==0.4.2
+tzdata==2022.1
+virtualenv==20.14.0
