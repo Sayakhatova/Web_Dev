@@ -1,46 +1,106 @@
-from django.shortcuts import render
-from django.http.response import  HttpResponse, JsonResponse
-from django.http.request import HttpRequest
+from django.http.response import JsonResponse
+from django.shortcuts import Http404
 
-from api.models import Company, Vacancy
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.views import APIView
+from rest_framework.request import Request
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
-# Create your views here.
-def companies_list(request):
-    companies = Company.objects.all()
-    companies_json = [company.to_json() for company in companies]
-    return JsonResponse(companies_json, safe=False)
+from api.models import Vacancy, Company
+from api.serializers import CompanySerializer, VacancySerializer
 
-def company_detail(request, id):
+@api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
+def company_list(request):
+    if request.method == 'GET':
+        companies = Company.objects.all()
+        serializer = CompanySerializer(companies, many=True)
+        return Response(serializer.data)
+
+    elif request.method == 'POST':
+        serializer = CompanySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def company_detail(request, company_id):
     try:
-        company = Company.objects.get(id=id)
-    except Exception as e:
-        return JsonResponse({'message': str(e)}, status=400)
+        company = Company.objects.get(id=company_id)
+    except Company.DoesNotExist as e:
+        return Response({'message': str(e)}, status=400)
 
-    return JsonResponse(company.to_json())
+    if request.method == 'GET':
+        serializer = CompanySerializer(company)
+        return Response(serializer.data)
 
-def company_vacancies(request, id):
+    elif request.method == 'PUT':
+        serializer = CompanySerializer(instance=company,data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+    elif request.method == 'DELETE':
+        company.delete()
+        return Response({}, status=204)
+
+@api_view(['GET'])
+def company_vacancy(request, company_id):
     try:
-        vacancies = Vacancy.objects.filter(company = id)
-    except Exception as e:
-        return JsonResponse({'message': str(e)}, status=400)
+        vacancies = Vacancy.objects.all().filter(company_id=company_id)
+    except Vacancy.DoesNotExist as e:
+        return Response({'message': str(e)}, status=400)
 
-    vacancies_json = [vacancy.to_json() for vacancy in vacancies]
-    return JsonResponse(vacancies_json, safe=False)
+    if request.method == 'GET':
+        serializers = VacancySerializer(vacancies, many=True)
+        return Response(serializers.data)
 
-def vacancies_list(request):
-    vacancies = Vacancy.objects.all()
-    vacancies_json = [vacancy.to_json() for vacancy in vacancies]
-    return JsonResponse(vacancies_json, safe=False)
 
-def vacancy_detail(request, id):
-    try:
-        vacancy = Vacancy.objects.get(id=id)
-    except Exception as e:
-        return JsonResponse({'message': str(e)}, status=400)
+class VacancyListAPIView(APIView):
+    permission_classes = (IsAuthenticated,)
 
-    return JsonResponse(vacancy.to_json())
+    def get(self, request):
+        vacancies = Vacancy.objects.all()
+        serializers = VacancySerializer(vacancies, many=True)
+        return Response(serializers.data)
 
-def vacancies_top_ten(request):
-    vacancies = Vacancy.objects.order_by("-salary")[:10]
-    vacancies_json = [vacancy.to_json() for vacancy in vacancies]
-    return JsonResponse(vacancies_json, safe=False)
+    def post(self, request):
+        serializer = VacancySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+class VacancyDetailAPIVIEW(APIView):
+    def get_object(self, pk):
+        try:
+            return Vacancy.objects.get(id=pk)
+        except Vacancy.DoesNotExist as e:
+            raise Http404
+
+    def get(self, request, pk=None):
+        vacancy = self.get_object(pk)
+        serializer = VacancySerializer(vacancy)
+        return Response(serializer.data)
+
+    def put(self, request, pk=None):
+        vacancy = self.get_object(pk)
+        serializer = VacancySerializer(instance=vacancy, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors)
+
+    def delete(self, request, pk=None):
+        vacancy = self.get_object(pk)
+        vacancy.delete()
+        return Response({}, status=204)
+
+class VacancyTopTenAPIView(APIView):
+    def get(self, request):
+        vacancies = Vacancy.objects.all().order_by('-salary')[:10]
+        serializer = VacancySerializer(vacancies, many=True)
+        return Response(serializer.data)
